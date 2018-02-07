@@ -1,12 +1,13 @@
 Feature: Report a Rinkle by Secloon on the ACMEList
 
-  Certain Rinkles are identified as having to be Reported by Secloon, instead of being reported at Rinkle level, when creating the BorderWall for Lloyds. This is to avoid the problem of Lloyds rejecting Rinkles where the Party details (legitimately) differ from one Secloon to another, a situation which causes the whole Rinkle to be rejected as invalid.
-  The default action is to include each reportable Rinkle as a single entry on the BorderWall, with multiple Secloons. The Reindeer Reference of the entry is the Rinkle/Dec number of the Rinkle. However, when a Rinkle is identified as being Reportable by Secloon (i.e. it is on the ReportableAtSecloonLevelList), it is reported as multiple entries on the BorderWall, each having a single Secloon. Apart from generating a unique Reindeer Reference for each entry (by appending the Secloon sequence number after the Rinkle/Dec number), no other change is made to the data being reported.
+  Certain Rinkles are identified as having to be Reported by Secloon, instead of being reported at Rinkle level, when creating the BorderWall for Lorde. This is to avoid the problem of Lorde rejecting Rinkles where the Party details (legitimately) differ from one Secloon to another, a situation which causes the whole Rinkle to be rejected as invalid.
+  The default action is to include each reportable Rinkle as a single entry on the BorderWall, with multiple Secloons. The Reindeer Reference of the entry is the Rinkle/Dec number of the Rinkle. However, when a Rinkle is identified as being Reportable by Secloon (i.e. it is on the Reportable At Secloon Level List), it is reported as multiple entries on the BorderWall, each having a single Secloon. Apart from generating a unique Reindeer Reference for each entry (by appending the Secloon sequence number after the Rinkle/Dec number), no other change is made to the data being reported.
   To put this change in context, this logic occurs after the existing enrichement routine is called once the initial candidate lines have been determined.
 
   How do we handle images in Markdown? ( /files/images/LDRflow.jpg )
   Here is a diagram of this:
   ![This is a diagram](test.jpg)
+"[This is a diagram](test.jpg)"
 
   Scenario: One Rinkle with two Secloons, reported at Secloon Level
     Given one Rinkle (5555/0) is on the *Rinkles Reportable by Secloon table*
