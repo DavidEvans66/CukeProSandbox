@@ -1,5 +1,7 @@
 Feature: Rinkles Reportable at Secloon Level table
 
+This is the table that identifies Rinkles that should be [reported at Secloon level](./ReportAtSecloon.feature).
+
   Scenario: Only Rinkles marked RINKLESECLOON on the table are returned
     Given the following table of Rinkles Reportable by Secloon
       | Rinkle No | Dec No | Reportable Level |
