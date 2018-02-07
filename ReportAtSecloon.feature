@@ -4,10 +4,12 @@ Feature: Report a Rinkle by Secloon on the ACMEList
   The default action is to include each reportable Rinkle as a single entry on the BorderWall, with multiple Secloons. The Reindeer Reference of the entry is the Rinkle/Dec number of the Rinkle. However, when a Rinkle is identified as being Reportable by Secloon (i.e. it is on the Reportable At Secloon Level List), it is reported as multiple entries on the BorderWall, each having a single Secloon. Apart from generating a unique Reindeer Reference for each entry (by appending the Secloon sequence number after the Rinkle/Dec number), no other change is made to the data being reported.
   To put this change in context, this logic occurs after the existing enrichement routine is called once the initial candidate lines have been determined.
 
-  How do we handle images in Markdown? ( /files/images/LDRflow.jpg )
-  Here is a diagram of this:
-  ![This is a diagram](test.jpg)
-"[This is a diagram](test.jpg)"
+  How do we handle images in Markdown? 
+  Here is a diagram:
+  ![This is a jpg diagram](./test.jpg)
+"[This is a jpg diagram](./test.jpg)"
+  ![This is a png diagram](./test.png)
+"[This is a png diagram](./test.png)"
 
   Scenario: One Rinkle with two Secloons, reported at Secloon Level
     Given one Rinkle (5555/0) is on the *Rinkles Reportable by Secloon table*
