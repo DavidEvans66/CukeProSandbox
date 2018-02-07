@@ -5,6 +5,8 @@ Feature: Report a Rinkle by Secloon on the ACMEList
   To put this change in context, this logic occurs after the existing enrichement routine is called once the initial candidate lines have been determined.
 
   How do we handle images in Markdown? ( /files/images/LDRflow.jpg )
+  Here is a diagram of this:
+  ![This is a diagram](/test.png)
 
   Scenario: One Rinkle with two Secloons, reported at Secloon Level
     Given one Rinkle (5555/0) is on the *Rinkles Reportable by Secloon table*
