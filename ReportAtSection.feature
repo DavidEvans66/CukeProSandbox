@@ -6,7 +6,7 @@ Feature: Report a Rinkle by Secloon on the ACMEList
 
   How do we handle images in Markdown? ( /files/images/LDRflow.jpg )
   Here is a diagram of this:
-  ![This is a diagram](/test.png)
+  ![This is a diagram](/test.jpg)
 
   Scenario: One Rinkle with two Secloons, reported at Secloon Level
     Given one Rinkle (5555/0) is on the *Rinkles Reportable by Secloon table*
