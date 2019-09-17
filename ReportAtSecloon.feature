@@ -4,19 +4,12 @@ Feature: Report a Rinkle by Secloon on the ACMEList
   The default action is to include each reportable Rinkle as a single entry on the BorderWall, with multiple Secloons. The Reindeer Reference of the entry is the Rinkle/Dec number of the Rinkle. However, when a Rinkle is identified as being Reportable by Secloon, i.e. it is on the [Reportable At Secloon Level List](./ReportableAtSecloonLevel.feature), it is reported as multiple entries on the BorderWall, each having a single Secloon. Apart from generating a unique Reindeer Reference for each entry (by appending the Secloon sequence number after the Rinkle/Dec number), no other change is made to the data being reported.
   To put this change in context, this logic occurs after the existing enrichement routine is called once the initial candidate lines have been determined.
 
-  How do we handle images in Markdown? 
-  Here is a diagram:
-  ![This is a jpg diagram](./test.jpg)
-"[This is a jpg diagram](./test.jpg)"
-  ![This is a png diagram](./test.png)
-"[This is a png diagram](./test.png)"
-
   Scenario: One Rinkle with two Secloons, reported at Secloon Level
-    Given one Rinkle (5555/0) is on the *Rinkles Reportable by Secloon table*
+    Given one Rinkle (5555/0) is on the Rinkles Reportable by Secloon table
       | Rinkle No | Dec No | Reportable Level |
       | 5555    | 0      | RINKLESECLOON      |
 
-    And the same Rinkle has these *Candidate Rinkle Lines* (two Secloons, with ID and Sequence numbers as follows:)
+    And the same Rinkle has these Candidate Rinkle Lines (two Secloons, with ID and Sequence numbers as follows:)
       | Rinkle No | Dec No | Secloon ID | Secloon Sequence number |
       | 5555    | 0      | 2001       | 1 |
       | 5555    | 0      | 2002       | 2 |
@@ -29,7 +22,7 @@ Feature: Report a Rinkle by Secloon on the ACMEList
       | 5555/0-2 | 2002 |
 
   Scenario: Two similar Rinkles, one reported at Secloon Level, one reported at Rinkle Level
-    Given the same Rinkle is on the *Rinkles Reportable by Secloon table*
+    Given the same Rinkle is on the Rinkles Reportable by Secloon table
       | Rinkle No | Dec No | Reportable Level |
       | 5555    | 0      | RINKLESECLOON |
 
@@ -42,14 +35,14 @@ Feature: Report a Rinkle by Secloon on the ACMEList
 
     When we generate the BorderWall
 
-    Then the *BorderWall contains* these three entries (two for the Rinkle reported at Secloon level, one for the other Rinkle reported at Rinkle level)
+    Then the BorderWall contains these three entries (two for the Rinkle reported at Secloon level, one for the other Rinkle reported at Rinkle level)
       #| Reindeer Reference | High Level References |
       | 5555/0-1 | 2001 |
       | 5555/0-2 | 2002 |
       | 6666/6   | 6001, 6002 |
 
   Scenario: A more Complex example with multiple entries on the table
-    Given several Rinkles on the *Rinkles Reportable by Secloon table*
+    Given several Rinkles on the Rinkles Reportable by Secloon table
       | Rinkle No | Dec No | Reportable Level |
       | 5552 | 0 | RINKLESECLOON |
       | 5554 | 1 | RINKLESECLOON |
